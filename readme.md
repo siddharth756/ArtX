@@ -6,13 +6,13 @@
 
 ## 🖼️ Screenshots
 
-![Desktop View](https://github.com/siddharth756/wavy/blob/main/artx-frontend/src/assets/webview1.png)
+![Desktop View](https://github.com/siddharth756/artx/blob/main/artx-frontend/src/assets/webview1.png)
 
-![Desktop View](https://github.com/siddharth756/wavy/blob/main/artx-frontend/src/assets/webview2.png)
+![Desktop View](https://github.com/siddharth756/artx/blob/main/artx-frontend/src/assets/webview2.png)
 
-![Desktop View](https://github.com/siddharth756/wavy/blob/main/artx-frontend/src/assets/webview3.png)
+![Desktop View](https://github.com/siddharth756/artx/blob/main/artx-frontend/src/assets/webview3.png)
 
-![Desktop View](https://github.com/siddharth756/wavy/blob/main/artx-frontend/src/assets/webview4.png)
+![Desktop View](https://github.com/siddharth756/artx/blob/main/artx-frontend/src/assets/webview4.png)
 
 ---
 
