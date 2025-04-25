@@ -9,40 +9,42 @@ import authUser from "../models/auth.js";
 
 const upload = multer()
 const app = express();
+const router = express.Router();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
+router.use(cors({
   origin: [process.env.ALLOWED_ORIGIN1, process.env.ALLOWED_ORIGIN2], // replace with your allowed origins
   methods: ["GET", "POST", "PUT", "DELETE"], // replace with your allowed methods
   credentials: true, // optional, for cookies/headers
 }));
-app.use(async (req,res,next) => {
+
+router.use(async (req,res,next) => {
   await connectDB()
   next()
 })
 
 app.get("/", (req,res) => {
-  res.write("<h1>Welcome to ArtX</h1>")
-  res.end()
+  res.json({ message: "Welcome to the ArtX API" })
 })
 
 
 // userController Routers
-app.get('/user/credits', upload.none(), authUser, userCredits)
-app.post('/user/register', upload.none(), registerUser)
-app.post('/user/login', upload.none(), loginUser)
-app.post('/user/google-login', upload.none(), googleLogin)
+router.get('/user/credits', upload.none(), authUser, userCredits)
+router.post('/user/register', upload.none(), registerUser)
+router.post('/user/login', upload.none(), loginUser)
+router.post('/user/google-login', upload.none(), googleLogin)
 
 
 // imageController Routers
-app.get("/images", getImages)
-app.post("/generate", upload.none(), authUser, generateImage);
-app.post("/savetogallary", upload.none(), saveToGallary)
+router.get("/images", getImages)
+router.post("/generate", upload.none(), authUser, generateImage);
+router.post("/savetogallary", upload.none(), saveToGallary)
 
 // app.listen(5000, () => {
 //   console.log("Server running on http://localhost:5000");
 // });
+app.use("/api", router)
 
 export default app;
