@@ -55,7 +55,7 @@
 
 ## 🌍 Live Demo
 
-- **Frontend**: [ArtX on Vercel](https://artx.vercel.app)
+- **Frontend**: [ArtX on Vercel](https://artx-ai.vercel.app)
 - **Backend API**: Hosted via Vercel Serverless (Node API in `/api/`)
 
 ---
