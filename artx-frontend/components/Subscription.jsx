@@ -52,8 +52,8 @@ function Subscription() {
                             <p className="text-sm mb-4">🎯 {plan.credits} image credits</p>
                         </div>
                         <button
-                            onClick={() => handleCheckout(plan.name)} // replace this if needed
-                            className="mt-auto bg-white text-black font-semibold py-2 px-4 rounded-xl hover:bg-gray-100 transition-all duration-200 active:scale-95"
+                            // onClick={() => handleCheckout(plan.name)} // replace this if needed
+                            className="mt-auto bg-white text-black font-semibold py-2 px-4 rounded-xl hover:bg-gray-100 transition-all duration-200 active:scale-95 cursor-pointer"
                         >
                             {plan.button}
                         </button>
