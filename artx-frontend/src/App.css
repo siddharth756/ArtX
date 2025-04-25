@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(39, 39, 39); */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #242525;
+    /* Tailwind's gray-300 */
+    border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+    display: none;
+    /* This hides the up/down buttons */
+}
+
+/* Firefox support */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #727272 transparent;
+}
