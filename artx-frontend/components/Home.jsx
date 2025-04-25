@@ -43,7 +43,7 @@ function Home() {
       </section>
 
       {/* AI Generated Images Section */}
-      <section className="py-20 px-6 bg-neutral-900 text-white">
+      <section className="pt-20 pb-15 px-6 bg-neutral-900 text-white">
         <h2 className="text-3xl font-bold text-center mb-10">Explore AI-Generated Art</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {demoImages.map((src, index) => (
@@ -61,6 +61,15 @@ function Home() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className='mt-15 text-center'>
+          <Link
+            to="/gallary"
+            className="bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-xl transition duration-300"
+          >
+            ✨ Visit Gallary
+          </Link>
+        </motion.div>
       </section>
 
       {/* Testimonials */}
