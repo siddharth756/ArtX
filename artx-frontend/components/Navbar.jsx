@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import AuthButtons from "./AuthButtons"
 import Profile from "./Profile";
+import logo from "../src/assets/logo.png"
 
 const Navbar = ({ openModel }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -16,7 +17,7 @@ const Navbar = ({ openModel }) => {
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center gap-2 text-xl font-bold w-68">
             <NavLink to={"/"}>
-              <img src="../src/assets/logo.png" alt="Logo" className="h-6 w-6 md:h-8 md:w-8" />
+              <img src={logo} alt="Logo" className="h-6 w-6 md:h-8 md:w-8" />
             </NavLink>
             <span>ArtX</span>
           </div>
