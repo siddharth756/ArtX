@@ -33,7 +33,7 @@ function Generate({ openModel }) {
         }, 3000);
         return
       }
-      
+
       if (!prompt) {
         setMassage("Please provide prompt.")
         setTimeout(() => {
@@ -41,14 +41,14 @@ function Generate({ openModel }) {
         }, 3000);
         return
       }
-      
+
       setisLoading(true)
       setsavedPrompt(prompt)
       const imageData = new FormData()
       imageData.append("prompt", prompt)
-      
+
       const res = await dispatch(fetchGeneratedImage(imageData)).unwrap()
-      const newUser = {...user, creditBalance: res.creditBalance }; 
+      const newUser = { ...user, creditBalance: res.creditBalance };
       await updateUser(newUser)
       setisLoading(false)
       setprompt("")
@@ -71,7 +71,7 @@ function Generate({ openModel }) {
       `https://api.cloudinary.com/v1_1/${cloud_app_name}/image/upload`,
       imageData
     );
-    
+
     const formData = new FormData()
     formData.append("prompt", savedPrompt)
     formData.append("imageUrl", uploadResult.data.secure_url)
@@ -111,9 +111,9 @@ function Generate({ openModel }) {
         Image Generator
       </h1>
       <p className="text-center text-gray-500 max-w-lg mb-6">
-      Enter prompt and watch our AI turn your imagination into visual art ✨
+        Enter prompt and watch our AI turn your imagination into visual art ✨
       </p>
-  
+
       {/* Feedback Messages */}
       {savedMessage && (
         <motion.p
@@ -124,7 +124,7 @@ function Generate({ openModel }) {
           {savedMessage}
         </motion.p>
       )}
-  
+
       {massage && (
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -134,7 +134,7 @@ function Generate({ openModel }) {
           {massage}
         </motion.p>
       )}
-  
+
       {/* Image Preview */}
       {isLoading ? (
         <Loader />
@@ -154,7 +154,7 @@ function Generate({ openModel }) {
                 className={`w-full max-h-[400px] object-contain transition-all duration-700 ease-in-out transform ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
               />
             </div>
-  
+
             <div className="flex justify-between mt-4 gap-4">
               <button
                 onClick={handleSaveToGallary}
@@ -172,30 +172,31 @@ function Generate({ openModel }) {
           </motion.div>
         )
       )}
-  
+
       {/* Input Form (Unchanged but styled wrapper) */}
       <div className="w-full max-w-xl mt-10 bg-white/60 backdrop-blur-md p-2 rounded-full shadow-lg">
         <form
           onSubmit={handleSubmit}
-          className="flex items-center bg-gray-100 rounded-full shadow-md focus-within:ring-2 focus-within:ring-indigo-600"
+          className="flex items-center bg-gray-100 rounded-full shadow-md focus-within:ring-2 focus-within:ring-indigo-600 overflow-hidden min-w-0"
         >
           <input
             type="text"
             value={prompt}
             onChange={(e) => setprompt(e.target.value)}
             placeholder="Describe the image..."
-            className="flex-grow h-12 pl-5 pr-2 text-gray-800 bg-transparent rounded-l-full focus:outline-none"
+            className="flex-grow h-12 pl-5 pr-2 text-gray-800 bg-transparent rounded-l-full focus:outline-none min-w-0"
           />
           <button
             type="submit"
-            className="h-12 px-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 text-white rounded-r-full hover:opacity-90 transition flex items-center cursor-pointer"
+            className="h-12 px-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 text-white rounded-r-full hover:opacity-90 transition flex items-center cursor-pointer whitespace-nowrap"
           >
             <i className="fa-solid fa-arrow-up mr-2"></i> Generate
           </button>
         </form>
-      </div>  
+      </div>
+
     </div>
   );
-}   
+}
 
 export default Generate;

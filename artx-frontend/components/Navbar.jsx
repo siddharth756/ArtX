@@ -121,6 +121,15 @@ const Navbar = ({ openModel }) => {
                 Home
               </NavLink>
               <NavLink
+                to={"/generate"}
+                className={({ isActive }) =>
+                  `px-4 rounded relative group hover:bg-white ${isActive ? "bg-white" : ""}`
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                Generate Image
+              </NavLink>
+              <NavLink
                 to={"/gallary"}
                 className={({ isActive }) =>
                   `px-4 rounded relative group hover:bg-white ${isActive ? "bg-white" : ""}`
